@@ -1,0 +1,7 @@
+Frequency , L001, 26.00
+Plant     , L002, P
+ProdCode  , L003, T
+Version   , L004, 5886
+DateFormat, L005, ymdd
+Parameter , L006, TD3225N
+Format    , L007, TD3225N.MKG

@@ -1,0 +1,8 @@
+Frequency , L001, 24.0000
+Plant     , L002, P
+ProdCode  , L003, E
+Version   , L004, 6
+DateFormat, L005, ymd
+Parameter , L006, FA-128
+Format    , L007, FA128.MKG
+

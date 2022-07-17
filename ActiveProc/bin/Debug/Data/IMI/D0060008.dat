@@ -1,0 +1,7 @@
+Frequency , L001, 25.00
+Plant     , L002, L
+ProdCode  , L003, M
+Version   , L004, p
+DateFormat, L005, ymd
+Parameter , L006, FA-226
+Format    , L007, FA226.MKG

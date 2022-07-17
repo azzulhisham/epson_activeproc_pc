@@ -1,0 +1,7 @@
+Frequency , L001,00.000000
+Plant     , L002, B
+ProdCode  , L003,Rakon
+Version   , L004,_
+DateFormat, L005, ww
+Parameter , L006, RAKON
+Format    , L007, RAKON.MKG

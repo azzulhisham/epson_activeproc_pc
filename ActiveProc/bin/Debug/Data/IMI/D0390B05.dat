@@ -1,0 +1,7 @@
+Frequency , L001, --.----
+Plant     , L002, UU
+ProdCode  , L003, TSX3225‚g
+Version   , L004, XX
+DateFormat, L005, ymd
+Parameter , L006, TCI_Format
+Format    , L007, 2520H.MKG

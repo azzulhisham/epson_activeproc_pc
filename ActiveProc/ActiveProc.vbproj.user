@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>C:\Users\Zulhisham\Desktop\epson\ActiveProc - PC\ClickOnce\|d:\Toshiba\az_Logics\AI\VB\VB2008_Project\PX\Laser Marking\ActiveProc\ActiveProc - PC\ClickOnce\|C:\Toshiba\az_Logics\AI\VB\VB2008_Project\PX\Laser Marking\ActiveProc\ActiveProc - PC\ClickOnce\|g:\az_Logics\AI\VB\VB2008_Project\PX\Laser Marking\ActiveProc\ActiveProc - PC\ClickOnce\|E:\az_Logics\AI\VB\VB2008_Project\PX\Laser Marking\ActiveProc\ActiveProc - PC\ClickOnce\</PublishUrlHistory>
+    <InstallUrlHistory>http://172.16.59.254/dnld/az_Logics/ActiveProc/</InstallUrlHistory>
+    <SupportUrlHistory>
+    </SupportUrlHistory>
+    <UpdateUrlHistory>http://172.16.59.254/dnld/az_Logics/ActiveProc/</UpdateUrlHistory>
+    <BootstrapperUrlHistory>http://172.16.59.254/dnld/az_Logics/ActiveProc/</BootstrapperUrlHistory>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ErrorReportUrlHistory />
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+</Project>

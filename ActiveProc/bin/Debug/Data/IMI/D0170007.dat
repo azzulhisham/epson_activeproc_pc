@@ -1,0 +1,7 @@
+Frequency  , L001, 16.0000
+Plant      , L002, P
+ProdCode   , L003, T
+Version    , L004, 5888
+DateFormat , L005, ymdd
+Parameter  , L006, TD4025
+Format     , L007, TD4025.MKG
