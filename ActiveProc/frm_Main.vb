@@ -1789,6 +1789,8 @@ Public Class frm_Main
 
             With Me
                 .SQL_Status.Text = ActiveProc.DataBase_.Server
+                Application.DoEvents()
+
                 Dim FuncRet As Integer = CheckDatabase()
 
                 If FuncRet < 0 Then

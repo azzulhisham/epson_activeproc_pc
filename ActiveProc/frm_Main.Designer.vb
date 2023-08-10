@@ -3150,7 +3150,7 @@ Partial Class frm_Main
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(756, 472)
         Me.WebBrowser1.TabIndex = 0
-        Me.WebBrowser1.Url = New System.Uri("http://172.16.59.254/azactivelm/", System.UriKind.Absolute)
+        Me.WebBrowser1.Url = New System.Uri("http://20.10.30.2/azactivelm/", System.UriKind.Absolute)
         '
         'Label1
         '
@@ -3208,24 +3208,24 @@ Partial Class frm_Main
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sub_DrawType})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(205, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(203, 26)
         '
         'sub_DrawType
         '
         Me.sub_DrawType.Name = "sub_DrawType"
-        Me.sub_DrawType.Size = New System.Drawing.Size(204, 22)
+        Me.sub_DrawType.Size = New System.Drawing.Size(202, 22)
         Me.sub_DrawType.Text = "Edit Draw Type Selection"
         '
         'ContextMenuStrip2
         '
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sub_TextAlign})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(202, 26)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(201, 26)
         '
         'sub_TextAlign
         '
         Me.sub_TextAlign.Name = "sub_TextAlign"
-        Me.sub_TextAlign.Size = New System.Drawing.Size(201, 22)
+        Me.sub_TextAlign.Size = New System.Drawing.Size(200, 22)
         Me.sub_TextAlign.Text = "Edit Text Align Selection"
         '
         'ContextMenuStrip3

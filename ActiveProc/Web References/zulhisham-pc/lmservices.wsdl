@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://zulhisham-tan/az_services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://zulhisham-tan/az_services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://zulhisham-tan/az_services/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://zulhisham-tan/az_services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://zulhisham-tan/az_services/">
       <s:element name="HelloWorld">
@@ -110,6 +110,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="az_FCweekcode_ad_test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lot_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SpecNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="az_FCweekcode_ad_testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="az_FCweekcode_ad_testResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="azWeekCodeEx_FC">
         <s:complexType>
           <s:sequence>
@@ -136,6 +151,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="UpdateRecordsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrUpdateRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MarkingRec" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrUpdateRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOrUpdateRecordsResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -237,6 +266,12 @@
   <wsdl:message name="az_FCweekcode_adSoapOut">
     <wsdl:part name="parameters" element="tns:az_FCweekcode_adResponse" />
   </wsdl:message>
+  <wsdl:message name="az_FCweekcode_ad_testSoapIn">
+    <wsdl:part name="parameters" element="tns:az_FCweekcode_ad_test" />
+  </wsdl:message>
+  <wsdl:message name="az_FCweekcode_ad_testSoapOut">
+    <wsdl:part name="parameters" element="tns:az_FCweekcode_ad_testResponse" />
+  </wsdl:message>
   <wsdl:message name="azWeekCodeEx_FCSoapIn">
     <wsdl:part name="parameters" element="tns:azWeekCodeEx_FC" />
   </wsdl:message>
@@ -248,6 +283,12 @@
   </wsdl:message>
   <wsdl:message name="UpdateRecordsSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrUpdateRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateRecords" />
+  </wsdl:message>
+  <wsdl:message name="AddOrUpdateRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateRecordsResponse" />
   </wsdl:message>
   <wsdl:message name="Upload_BCC72_CntDataSoapIn">
     <wsdl:part name="parameters" element="tns:Upload_BCC72_CntData" />
@@ -308,6 +349,11 @@
       <wsdl:input message="tns:az_FCweekcode_adSoapIn" />
       <wsdl:output message="tns:az_FCweekcode_adSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="az_FCweekcode_ad_test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return A Week Code For FC Package (Advance Version)</wsdl:documentation>
+      <wsdl:input message="tns:az_FCweekcode_ad_testSoapIn" />
+      <wsdl:output message="tns:az_FCweekcode_ad_testSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="azWeekCodeEx_FC">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return A Week Code For FC Package (Extended Version)</wsdl:documentation>
       <wsdl:input message="tns:azWeekCodeEx_FCSoapIn" />
@@ -317,6 +363,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save Marking Records into SQL Server... </wsdl:documentation>
       <wsdl:input message="tns:UpdateRecordsSoapIn" />
       <wsdl:output message="tns:UpdateRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateRecords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Or Update Marking Records into SQL Server... </wsdl:documentation>
+      <wsdl:input message="tns:AddOrUpdateRecordsSoapIn" />
+      <wsdl:output message="tns:AddOrUpdateRecordsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Upload_BCC72_CntData">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload BCC72 Counting Data into SQL Server &amp; NetTerm Directories... </wsdl:documentation>
@@ -408,6 +459,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="az_FCweekcode_ad_test">
+      <soap:operation soapAction="http://zulhisham-tan/az_services/az_FCweekcode_ad_test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="azWeekCodeEx_FC">
       <soap:operation soapAction="http://zulhisham-tan/az_services/azWeekCodeEx_FC" style="document" />
       <wsdl:input>
@@ -419,6 +479,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateRecords">
       <soap:operation soapAction="http://zulhisham-tan/az_services/UpdateRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateRecords">
+      <soap:operation soapAction="http://zulhisham-tan/az_services/AddOrUpdateRecords" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -528,6 +597,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="az_FCweekcode_ad_test">
+      <soap12:operation soapAction="http://zulhisham-tan/az_services/az_FCweekcode_ad_test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="azWeekCodeEx_FC">
       <soap12:operation soapAction="http://zulhisham-tan/az_services/azWeekCodeEx_FC" style="document" />
       <wsdl:input>
@@ -539,6 +617,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateRecords">
       <soap12:operation soapAction="http://zulhisham-tan/az_services/UpdateRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateRecords">
+      <soap12:operation soapAction="http://zulhisham-tan/az_services/AddOrUpdateRecords" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -576,10 +663,10 @@
   </wsdl:binding>
   <wsdl:service name="az_Services">
     <wsdl:port name="az_ServicesSoap" binding="tns:az_ServicesSoap">
-      <soap:address location="http://172.16.59.254/az_services/lmservices.asmx" />
+      <soap:address location="http://20.10.30.2/az_services/lmservices.asmx" />
     </wsdl:port>
     <wsdl:port name="az_ServicesSoap12" binding="tns:az_ServicesSoap12">
-      <soap12:address location="http://172.16.59.254/az_services/lmservices.asmx" />
+      <soap12:address location="http://20.10.30.2/az_services/lmservices.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
